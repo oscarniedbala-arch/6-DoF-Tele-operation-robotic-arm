@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1400"
+   height="800"
+   viewBox="0 0 1400 800"
+   version="1.1"
+   id="svg96"
+   sodipodi:docname="telearm_architecture.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs100" />
+  <sodipodi:namedview
+     id="namedview98"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="0.86428571"
+     inkscape:cx="527.60331"
+     inkscape:cy="334.38017"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg96" />
+  <style
+     id="style2">
+    .box { fill: #ffffff; stroke: #000000; stroke-width: 2; }
+    .title { font: 700 18px sans-serif; }
+    .text { font: 14px sans-serif; }
+    .small { font: 12px sans-serif; }
+    .line { stroke: #000000; stroke-width: 2; fill: none; }
+    .dash { stroke-dasharray: 8 6; }
+  </style>
+  <!-- Master side -->
+  <rect
+     class="box"
+     x="60"
+     y="80"
+     width="420"
+     height="280"
+     rx="16"
+     id="rect4" />
+  <text
+     class="title"
+     x="80"
+     y="115"
+     id="text6">MASTER (User Console)</text>
+  <text
+     class="text"
+     x="80"
+     y="145"
+     id="text8">ESP32-S3 (Master)</text>
+  <text
+     class="small"
+     x="80"
+     y="170"
+     id="text10">• Reads master-arm encoders / pots</text>
+  <text
+     class="small"
+     x="80"
+     y="190"
+     id="text12">• Deadman + mode switches + foot pedal</text>
+  <text
+     class="small"
+     x="80"
+     y="210"
+     id="text14">• Sends joint targets + tool commands</text>
+  <text
+     class="small"
+     x="80"
+     y="230"
+     id="text16">• Receives robot state + faults</text>
+  <rect
+     class="box"
+     x="90"
+     y="250"
+     width="360"
+     height="90"
+     rx="14"
+     id="rect18" />
+  <text
+     class="text"
+     x="110"
+     y="280"
+     id="text20">User Manipulator Arm</text>
+  <text
+     class="small"
+     x="110"
+     y="305"
+     id="text22">AS5600 via TCA9548A OR 10k pots fallback</text>
+  <!-- Robot side motion -->
+  <rect
+     class="box"
+     x="560"
+     y="80"
+     width="420"
+     height="340"
+     rx="16"
+     id="rect24" />
+  <text
+     class="title"
+     x="580"
+     y="115"
+     id="text26">ROBOT (Real-Time Motion Layer)</text>
+  <text
+     class="text"
+     x="580"
+     y="145"
+     id="text28">ESP32-S3 (Robot Motion Controller)</text>
+  <text
+     class="small"
+     x="580"
+     y="170"
+     id="text30">• 4× STEP/DIR to TB6600 (J1–J4)</text>
+  <text
+     class="small"
+     x="580"
+     y="190"
+     id="text32">• PCA9685 PWM to DS3240 servos (J5–J6 + tool)</text>
+  <text
+     class="small"
+     x="580"
+     y="210"
+     id="text34">• TCA9548A → 6× AS5600 joint encoders</text>
+  <text
+     class="small"
+     x="580"
+     y="230"
+     id="text36">• Limit switches + E‑Stop + current alarms</text>
+  <text
+     class="small"
+     x="580"
+     y="250"
+     id="text38">• CAN: command/state @ 250–500 kbps</text>
+  <text
+     class="small"
+     x="580"
+     y="270"
+     id="text40">• Failsafe: comms loss → controlled stop → disable drives</text>
+  <rect
+     class="box"
+     x="590"
+     y="300"
+     width="360"
+     height="100"
+     rx="14"
+     id="rect42" />
+  <text
+     class="text"
+     x="610"
+     y="330"
+     id="text44">Actuators / I/O</text>
+  <text
+     class="small"
+     x="665.47089"
+     y="325.40869"
+     id="text46"
+     transform="scale(0.91664416,1.0909359)"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:normal;font-family:sans-serif;stroke-width:0.916644">TB6600 ×4 • DS3240 ×3 • Limit switches • Current sensors</text>
+  <text
+     class="small"
+     x="610"
+     y="375"
+     id="text48">Tool: cutter + gripper + camera mount + light guide</text>
+  <!-- Robot side compute/video -->
+  <rect
+     class="box"
+     x="1060"
+     y="80"
+     width="300"
+     height="340"
+     rx="16"
+     id="rect50" />
+  <text
+     class="title"
+     x="1080"
+     y="115"
+     id="text52">ROBOT (Compute / Video)</text>
+  <text
+     class="text"
+     x="1080"
+     y="145"
+     id="text54">Raspberry Pi / SBC</text>
+  <text
+     class="small"
+     x="1080"
+     y="170"
+     id="text56">• 2-camera streaming/recording</text>
+  <text
+     class="small"
+     x="1080"
+     y="190"
+     id="text58">• Web UI overlay (state, faults)</text>
+  <text
+     class="small"
+     x="1080"
+     y="210"
+     id="text60">• Log “black box”: cmds + encoders</text>
+  <text
+     class="small"
+     x="1080"
+     y="230"
+     id="text62">• Optional ROS2 later</text>
+  <rect
+     class="box"
+     x="1088"
+     y="260"
+     width="244"
+     height="140"
+     rx="14"
+     id="rect64" />
+  <text
+     class="text"
+     x="1105"
+     y="290"
+     id="text66">Cameras</text>
+  <text
+     class="small"
+     x="1105"
+     y="315"
+     id="text68">Cam A: fixed overhead/scene</text>
+  <text
+     class="small"
+     x="1105"
+     y="335"
+     id="text70">Cam B: tool/endoscope</text>
+  <text
+     class="small"
+     x="1105"
+     y="355"
+     id="text72">Lighting: LED (diffused)</text>
+  <!-- Links -->
+  <path
+     class="line"
+     d="M480 180 L560 180"
+     id="path74" />
+  <text
+     class="small"
+     x="534.27667"
+     y="158.63892"
+     id="text76"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:normal;font-family:sans-serif;stroke-width:0.916811"
+     transform="scale(0.9032978,1.1070546)">CAN (motion)</text>
+  <path
+     class="line dash"
+     d="m 480,218 h 580"
+     id="path78" />
+  <text
+     class="small"
+     x="1114.3348"
+     y="172.24579"
+     id="text80"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:normal;font-family:sans-serif;stroke-width:1.10132"
+     transform="scale(0.81411593,1.2283263)">Ethernet/Wi‑Fi (video + logs)</text>
+  <path
+     class="line dash"
+     d="M770 420 L770 720"
+     id="path82" />
+  <text
+     class="small"
+     x="786"
+     y="520"
+     id="text84">Power rails + E‑Stop chain</text>
+  <!-- Power block -->
+  <rect
+     class="box"
+     x="519.88818"
+     y="609.88818"
+     width="724.68646"
+     height="150.22362"
+     rx="12.603242"
+     id="rect86" />
+  <text
+     class="title"
+     x="540"
+     y="645"
+     id="text88">POWER / SAFETY</text>
+  <text
+     class="small"
+     x="540"
+     y="670"
+     id="text90">24V Motor PSU → TB6600s (fused) • 6–8.4V Servo PSU → servos (fused) • 5V/3.3V logic buck for ESP32/Pi</text>
+  <text
+     class="small"
+     x="540"
+     y="690"
+     id="text92">Hardware E‑Stop drops motor + servo power (logic stays alive for logging). Limit switches are NC where possible.</text>
+  <text
+     class="small"
+     x="540"
+     y="710"
+     id="text94">Current sensing on motor rail + servo rail (jam / brownout detection). TVS + ferrites for EMC.</text>
+</svg>

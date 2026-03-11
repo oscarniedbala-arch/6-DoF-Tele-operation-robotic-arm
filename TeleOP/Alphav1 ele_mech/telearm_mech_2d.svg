@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1400"
+   height="800"
+   viewBox="0 0 1400 800"
+   version="1.1"
+   id="svg77"
+   sodipodi:docname="telearm_mech_2d.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview79"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.2222846"
+     inkscape:cx="681.51068"
+     inkscape:cy="12.272101"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg77" />
+  <style
+     id="style2">
+    .axis { stroke: #000; stroke-width: 3; }
+    .link { stroke: #000; stroke-width: 10; stroke-linecap: round; }
+    .joint { fill: #fff; stroke: #000; stroke-width: 3; }
+    .txt { font: 16px sans-serif; }
+    .small { font: 13px sans-serif; }
+    .dim { stroke: #000; stroke-width: 2; marker-end: url(#arrow); marker-start: url(#arrow); }
+  </style>
+  <defs
+     id="defs7">
+    <rect
+       x="770.68795"
+       y="381.25328"
+       width="134.17497"
+       height="67.087486"
+       id="rect343" />
+    <marker
+       id="arrow"
+       markerWidth="10"
+       markerHeight="10"
+       refX="5"
+       refY="5"
+       orient="auto">
+      <path
+         d="M0,0 L10,5 L0,10 z"
+         fill="#000"
+         id="path4" />
+    </marker>
+  </defs>
+  <text
+     class="txt"
+     x="60"
+     y="60"
+     id="text9">6‑Axis “Elbow + Spherical Wrist” geometry (recommended for simplest IK)</text>
+  <text
+     class="small"
+     x="60"
+     y="85"
+     id="text11">J1 base yaw • J2 shoulder pitch • J3 elbow pitch • J4 wrist yaw/roll (stepper) • J5 wrist pitch (servo) • J6 wrist roll (servo)</text>
+  <!-- Base -->
+  <line
+     class="axis"
+     x1="200"
+     y1="700"
+     x2="200"
+     y2="520"
+     id="line13" />
+  <circle
+     class="joint"
+     cx="200"
+     cy="520"
+     r="18"
+     id="circle15" />
+  <text
+     class="txt"
+     x="160"
+     y="745"
+     id="text17">Base</text>
+  <!-- Link L1 -->
+  <line
+     class="link"
+     x1="200"
+     y1="520"
+     x2="320"
+     y2="520"
+     id="line19" />
+  <circle
+     class="joint"
+     cx="320"
+     cy="520"
+     r="16"
+     id="circle21" />
+  <text
+     class="small"
+     x="230"
+     y="500"
+     id="text23">L1 (base offset)</text>
+  <!-- Link L2 (upper arm) -->
+  <line
+     class="link"
+     x1="320"
+     y1="520"
+     x2="560"
+     y2="380"
+     id="line25" />
+  <circle
+     class="joint"
+     cx="560"
+     cy="380"
+     r="16"
+     id="circle27" />
+  <text
+     class="small"
+     x="400"
+     y="395"
+     id="text29">L2 (upper arm)</text>
+  <!-- Link L3 (forearm) -->
+  <line
+     class="link"
+     x1="560"
+     y1="380"
+     x2="820"
+     y2="450"
+     id="line31" />
+  <circle
+     class="joint"
+     cx="820"
+     cy="450"
+     r="16"
+     id="circle33" />
+  <text
+     class="small"
+     x="660"
+     y="420"
+     id="text35"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13px;line-height:normal;font-family:sans-serif;white-space:pre;inline-size:92.6659"
+     transform="translate(2.4544202,-27.816763)"
+     xml:space="preserve"><tspan
+       x="660"
+       y="420"
+       id="tspan390">L3 (forearm)</tspan></text>
+  <!-- Wrist -->
+  <line
+     class="link"
+     x1="820"
+     y1="450"
+     x2="960"
+     y2="400"
+     id="line37" />
+  <circle
+     class="joint"
+     cx="960"
+     cy="400"
+     r="14"
+     id="circle39" />
+  <text
+     class="small"
+     x="824.09302"
+     y="398.1814"
+     id="text41"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13px;line-height:normal;font-family:sans-serif">d4 (wrist offset)</text>
+  <!-- Tool -->
+  <line
+     class="link"
+     x1="960"
+     y1="400"
+     x2="1100"
+     y2="350"
+     id="line43" />
+  <circle
+     class="joint"
+     cx="1100"
+     cy="350"
+     r="12"
+     id="circle45" />
+  <text
+     class="small"
+     x="964.63763"
+     y="339.18185"
+     id="text47"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13px;line-height:normal;font-family:sans-serif">d6 (tool length)</text>
+  <text
+     class="txt"
+     x="1120"
+     y="355"
+     id="text49">Tool / Gripper</text>
+  <!-- Dimension examples -->
+  <line
+     class="dim"
+     x1="200"
+     y1="760"
+     x2="320"
+     y2="760"
+     id="line51" />
+  <text
+     class="small"
+     x="235"
+     y="790"
+     id="text53">L1</text>
+  <line
+     class="dim"
+     x1="340"
+     y1="735"
+     x2="560"
+     y2="735"
+     id="line55" />
+  <text
+     class="small"
+     x="430"
+     y="790"
+     id="text57">L2 (proj.)</text>
+  <line
+     class="dim"
+     x1="580"
+     y1="735"
+     x2="820"
+     y2="735"
+     id="line59" />
+  <text
+     class="small"
+     x="670"
+     y="790"
+     id="text61">L3 (proj.)</text>
+  <!-- Suggested nominal lengths -->
+  <rect
+     x="60"
+     y="110"
+     width="560"
+     height="190"
+     fill="#fff"
+     stroke="#000"
+     stroke-width="2"
+     rx="16"
+     id="rect63" />
+  <text
+     class="txt"
+     x="85"
+     y="145"
+     id="text65"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:normal;font-family:sans-serif">Nominal link lengths to start documentation</text>
+  <text
+     class="small"
+     x="85"
+     y="175"
+     id="text67">L1 = 80 mm (base to shoulder axis)</text>
+  <text
+     class="small"
+     x="85"
+     y="200"
+     id="text69">L2 = 180 mm (upper arm)</text>
+  <text
+     class="small"
+     x="85"
+     y="225"
+     id="text71">L3 = 160 mm (forearm)</text>
+  <text
+     class="small"
+     x="85"
+     y="250"
+     id="text73">d4 = 70 mm (wrist to wrist-center)</text>
+  <text
+     class="small"
+     x="85"
+     y="275"
+     id="text75">d6 = 80 mm (wrist-center to tool tip)</text>
+  <text
+     xml:space="preserve"
+     id="text341"
+     style="fill:#000000;white-space:pre;shape-inside:url(#rect343)" />
+</svg>
